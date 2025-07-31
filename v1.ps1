@@ -5,7 +5,6 @@ param(
     [string]$ResultsFile      = 'Results.csv'
 )
 
-# Domains einlesen
 if (-not (Test-Path $DomainsFile)) {
     Write-Error "Domains-File '$DomainsFile' not found."
     exit 1
@@ -32,7 +31,6 @@ foreach ($domain in $domains) {
     }
 }
 
-# Statistik
 $results = Import-Csv $ResultsFile | Where-Object { $_.response_ms -ne 'ERR' } `
     | Select-Object @{n='response_ms';e={[double]$_.response_ms}}
 $avg = [math]::Round(($results | Measure-Object response_ms -Average).Average,2)

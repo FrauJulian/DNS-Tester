@@ -43,15 +43,7 @@ This PowerShell script measures DNS query response times for a list of domains a
 ## ▶️ Usage
 
 ```powershell
-# Run with default parameters
-.\DNSPerformanceTest.ps1
-
-# Run with custom parameters
-dotnet-script DNSPerformanceTest.ps1 \
-    -DnsServer "1.1.1.1" \
-    -QueriesPerDomain 3 \
-    -DomainsFile "Domains.txt" \
-    -ResultsFile "Results.csv"
+.\v1
 ```
 
 ---
